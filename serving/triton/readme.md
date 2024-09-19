@@ -21,9 +21,11 @@ mkdir /triton_model_repo
 cp -r /tensorrtllm_backend/all_models/inflight_batcher_llm/* /triton_model_repo/
 # 3. modify model repositorry 
 docker run --gpus '"device=4,5,6,7"' --rm -it --network=host  --shm-size 32g  -v /home/david/nvtriton:/workspace/ -v /data/models/:/workspace/models/  -w /workspace  nvcr.io/nvidia/tritonserver:24.08-trtllm-python-py3 
+
 # # generate model repo only once for all 
 # cd bytedance/triton_scripts/
 # bash generate_model_repo.sh 
+
 # 4. launch serving 
 # 'world_size' is the number of GPUs you want to use for serving. This should be aligned with the number of GPUs used to build the TensorRT-LLM engine.
 python3 /workspace/tensorrtllm_backend/scripts/launch_triton_server.py --world_size=4 --grpc_port 8101  --http_port 8100 --metrics_port 8102 --model_repo=/workspace/models/triton_model_repo/
