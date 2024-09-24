@@ -49,7 +49,12 @@ python3 tools/inflight_batcher_llm/benchmark_core_model.py -u localhost:8101 -i 
 
 WIP
 
-## Triton Perf Analyzer 
 
-WIP 
+
+## Update Sep-24
+
+* as `triton/trtllm-backend/benchmakr_core_model.py` has same output as `trtllm/gptManagerBench`, in later we can directly run `bash run.sh` for serving benchmark.
+
+* current `requests=max_bs` is not well tuned, there maybe chance to continue increase the bs for higher throughputs under certain latency thresholds.
+
 
