@@ -11,7 +11,7 @@ here is a sample to use nvidia triton server to deploy an tensorrt-llm engine
 4. launch [perf_bench](https://github.com/triton-inference-server/tensorrtllm_backend/blob/main/tools/inflight_batcher_llm/benchmark_core_model.py) in another terminal 
 
 
-* ngc triton server 24.08 :  trtllm 0.12.0 ,  triton-cli 0.0.11 
+* ngc triton server 24.08 :  trtllm 0.12.0 ,  triton-cli 0.0.11  on H20 server
 
 
 ```sh

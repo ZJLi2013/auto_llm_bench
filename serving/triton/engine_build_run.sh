@@ -56,7 +56,7 @@ if [[ $? -eq 0 ]]; then
 fi
 
 # trtllm_ckpt convert
-python3 /app/tensorrt_llm/examples/llama/.py  --model_dir $hf_model_path --dtype $data_type --output_dir $trtllm_ckpt_path --tp_size $tp_size --moe_tp_size 2 --moe_ep_size 2 
+python3 /app/tensorrt_llm/examples/llama/convert_checkpoint.py  --model_dir $hf_model_path --dtype $data_type --output_dir $trtllm_ckpt_path --tp_size $tp_size --moe_tp_size 2 --moe_ep_size 2 
 if [[ $? -eq 0 ]]; then
         echo "ckpt convert done"
 fi
